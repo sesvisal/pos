@@ -10,10 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Khmer:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#e9effb;--surf:#f3f6fd;--soft:#e5ecf9;--line:#d9e3f5;--ink:#1c2b4d;--mute:#5d6e94;--acc:#3b7df5;--acc-soft:#dce8ff;--acc-ink:#fff;--bar:#bcd2fb;--ph:#a3b5d6;--bad:#e5484d;
+:root{color-scheme:light;--bg:#dde6f6;--surf:#f3f6fd;--soft:#e5ecf9;--line:#d9e3f5;--ink:#1c2b4d;--mute:#5d6e94;--acc:#3b7df5;--acc-soft:#dce8ff;--acc-ink:#fff;--bar:#bcd2fb;--ph:#a3b5d6;--bad:#e5484d;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0f1526;--surf:#172036;--soft:#1e2943;--line:#26324f;--ink:#e8eefc;--mute:#9eadd2;--acc:#5b9bff;--acc-soft:#1f3258;--acc-ink:#071226;--bar:#2e4a80;--ph:#53648a;--bad:#ff7b80}}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#0f1526;--surf:#172036;--soft:#1e2943;--line:#26324f;--ink:#e8eefc;--mute:#9eadd2;--acc:#5b9bff;--acc-soft:#1f3258;--acc-ink:#071226;--bar:#2e4a80;--ph:#53648a;--bad:#ff7b80}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2)) fixed;min-height:100vh;color:var(--ink);font-family:"DM Sans","Noto Sans Khmer",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.45}
@@ -130,9 +128,7 @@ input,select{background:var(--bg);border:1px solid var(--line);border-radius:10p
 .week u{display:block;width:100%;background:var(--bar);border-radius:6px 6px 0 0;min-height:2px}
 .week .sel u{background:var(--acc)}
 .gap{margin-bottom:16px}
-:root{--ok:#1fa463;--ok-soft:#dff5e9;--bad-soft:#fde8e9;--bg2:#dce6f8;--sh:6px 6px 16px rgba(124,146,196,.24),-6px -6px 16px rgba(255,255,255,.9);--sh-s:3px 3px 8px rgba(124,146,196,.22),-3px -3px 8px rgba(255,255,255,.9);--sh-in:inset 2px 2px 5px rgba(124,146,196,.2),inset -2px -2px 5px rgba(255,255,255,.85)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ok:#4cc48a;--ok-soft:#16322a;--bad-soft:#3a2125;--bg2:#0a0f1d;--sh:6px 6px 16px rgba(0,0,0,.42),-4px -4px 14px rgba(70,95,150,.10);--sh-s:3px 3px 8px rgba(0,0,0,.42),-2px -2px 8px rgba(70,95,150,.09);--sh-in:inset 2px 2px 5px rgba(0,0,0,.42),inset -2px -2px 5px rgba(70,95,150,.10)}}
-:root[data-theme="dark"]{--ok:#4cc48a;--ok-soft:#16322a;--bad-soft:#3a2125;--bg2:#0a0f1d;--sh:6px 6px 16px rgba(0,0,0,.42),-4px -4px 14px rgba(70,95,150,.10);--sh-s:3px 3px 8px rgba(0,0,0,.42),-2px -2px 8px rgba(70,95,150,.09);--sh-in:inset 2px 2px 5px rgba(0,0,0,.42),inset -2px -2px 5px rgba(70,95,150,.10)}
+:root{--ok:#1fa463;--ok-soft:#dff5e9;--bad-soft:#fde8e9;--bg2:#cfdbf1;--sh:6px 6px 16px rgba(124,146,196,.24),-6px -6px 16px rgba(255,255,255,.9);--sh-s:3px 3px 8px rgba(124,146,196,.22),-3px -3px 8px rgba(255,255,255,.9);--sh-in:inset 2px 2px 5px rgba(124,146,196,.2),inset -2px -2px 5px rgba(255,255,255,.85)}
 .btn.mini{padding:6px 12px;font-size:.85rem}
 .btn.tog.on{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
 .btn.tog.off{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
@@ -248,8 +244,6 @@ input,select{border-color:transparent;box-shadow:var(--sh-in)}
 .oc{background:var(--soft);box-shadow:none;border:1px solid var(--line)}.oc[aria-pressed="true"]{border-color:transparent}
 
 :root{--field:#fff;--sh:0 6px 18px rgba(40,70,130,.07);--sh-s:0 1px 3px rgba(40,70,130,.09);--sh-in:none}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--field:#1b2640;--sh:0 6px 18px rgba(0,0,0,.35);--sh-s:0 1px 3px rgba(0,0,0,.35);--sh-in:none}}
-:root[data-theme="dark"]{--field:#1b2640;--sh:0 6px 18px rgba(0,0,0,.35);--sh-s:0 1px 3px rgba(0,0,0,.35);--sh-in:none}
 .pic{background:var(--field);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-s)}
 .pic svg{width:30px;height:30px}
 .card:hover .pic{border-color:var(--acc);box-shadow:var(--sh)}
@@ -276,6 +270,17 @@ body.hasopt .wrap{padding-bottom:320px}
 
 html,body{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
 .appico{width:16px;height:16px}
+
+.acts .btn{flex:1;text-align:center;text-decoration:none}
+@media print{.top,.drawer,.scrim,.modal,.cbar,.rtool,.toast{display:none!important}body{background:#fff!important}.wrap{max-width:none!important;padding:0!important}.panel,.stat{box-shadow:none!important;border:1px solid #ddd!important}.anim>*{animation:none!important}}
+
+.btn,.btn.ghost,.oc,.oc[aria-pressed="true"],.ib,.cat,.cat[aria-pressed="true"],.stp,.stp button,.cbar,.opt,.opt[aria-pressed="true"]{box-shadow:none!important}
+
+.cat[aria-pressed="true"],#tabs button[aria-selected="true"]{background:linear-gradient(135deg,#6aa5ff,#3b7df5);color:#fff;font-weight:600;opacity:1}
+
+.ctype{display:inline-flex;gap:3px;background:var(--soft);padding:3px;border-radius:999px;justify-self:start}
+.ctype button{border:0;background:none;padding:6px 14px;border-radius:999px;cursor:pointer;color:var(--mute);font-weight:600;font-size:.84rem}
+.ctype button[aria-pressed="true"]{background:linear-gradient(135deg,#6aa5ff,#3b7df5);color:#fff}
 </style>
 </head>
 <body>
@@ -294,7 +299,6 @@ html,body{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
     <button data-tab="menu" aria-selected="false">Menu</button>
     <button data-tab="report" aria-selected="false">Daily report</button>
   </nav>
-  <div class="theme"><small>Theme</small><div class="seg" id="seg"><button data-th="light" aria-pressed="false">Light</button><button data-th="dark" aria-pressed="false">Dark</button><button data-th="auto" aria-pressed="false">Auto</button></div></div>
 </aside>
 <main id="app" class="wrap"></main>
 <script>
@@ -322,6 +326,7 @@ var MORE=[
 ['Food',0,0,0,[['Club Sandwich',4.5],['Ham & Cheese Toast',4],['Chicken Sandwich',4.5],['Cheese Toast',3.5],['Fried Rice',4]]],
 ['Dessert',0,0,0,[['Cheesecake',4],['Brownie',3],['Tiramisu',4.5],['Ice Cream Scoop',2]]]];
 if(!S.more1){MORE.forEach(function(g){if(S.cats.indexOf(g[0])<0)S.cats.push(g[0]);g[4].forEach(function(it){var has=S.menu.some(function(m){return m.name.toLowerCase()===it[0].toLowerCase()});if(!has)S.menu.push({id:S.next++,name:it[0],price:it[1],cat:g[0],sg:!!g[1],ic:!!g[2],hot:!!g[3]})})});S.more1=true;save()}
+if(!S.food){S.food=['Pastries','Food','Dessert'].filter(function(c){return S.cats.indexOf(c)>-1});save()}
 if(!S.tops){S.tops=[{name:'Boba',price:0.5},{name:'Pudding',price:0.5},{name:'Jelly',price:0.5},{name:'Cheese Foam',price:1}];save()}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 var tab='sell',cat='All',cart=[],day=dkey(new Date()),pendingImg=null,q='',voidId=null,pick=null;
@@ -352,17 +357,17 @@ function viewSell(){
     return '<div class="swipe'+(l.key===sel?' sel':'')+'"><div class="dw"><button class="ib" data-act="ldel" data-key="'+e(l.key)+'" aria-label="Remove '+e(m.name)+'" title="Remove">'+TRASH+'</button></div><div class="sl lrow"'+(canEdit(l)?' data-act="ledit" data-key="'+e(l.key)+'"':'')+'><div class="ltop"><b>'+e(m.name)+'</b><span class="lamt">'+$(lineUnit(l,m)*l.qty)+'</span></div>'+(tags.length?'<div class="ltags">'+tags.map(function(t){return '<span class="tag">'+e(t)+'</span>'}).join('')+'</div>':'')+'<div class="lctl"><div class="stp">'+(l.qty>1?'<button data-act="ldec" data-key="'+e(l.key)+'" aria-label="Remove one">−</button>':'')+'<b>'+l.qty+'</b><button data-act="linc" data-key="'+e(l.key)+'" aria-label="Add one">+</button></div>'+(l.qty>1?'<span class="each">'+$(lineUnit(l,m))+' each</span>':'')+(canEdit(l)?'<button class="ib pen" data-act="ledit" data-key="'+e(l.key)+'" aria-label="Edit '+e(m.name)+'" title="Edit options">'+PENCIL+'</button>':'')+'</div></div></div>'}).join('')||'<p class="empty">Tap a drink to start an order.</p>';
   return '<div class="sell"><div class="cats">'+cats+'</div><div class="mid"><div class="items" id="items">'+itemsHtml()+'</div>'+optPanel()+'</div>'+
   '<aside class="panel cart" id="cart"><h2>Current order</h2><div class="clines">'+lines+'</div><div class="total"><span>Total</span><span>'+$(cartTotal())+'</span></div>'+rielHtml()+payHtml()+
-  '<button class="btn" data-act="charge"'+(ids.length?'':' disabled')+'>Complete</button></aside></div>'+cartBar();
+  '<button class="btn" data-act="charge"'+(canPay()?'':' disabled')+'>Complete</button></aside></div>'+cartBar();
 }
 function viewMenu(){
   var opts=S.cats.map(function(c){return '<option>'+e(c)+'</option>'}).join('');
   var rows=S.cats.map(function(c){
     var its=S.menu.filter(function(m){return m.cat===c});
-    return '<div class="panel gap"><div class="row" style="border:0;padding-top:0"><h2 style="margin:0">'+e(c)+'</h2>'+(its.length?'':'<button class="x" data-act="delcat" data-v="'+e(c)+'">Delete category</button>')+'</div>'+
-    (its.map(function(m){return '<div class="row mrow"><span class="ni">'+(m.img?'<img class="thumb" src="'+m.img+'" alt="">':'<span class="thumb">'+CUP.replace(/34/g,'22')+'</span>')+e(m.name)+'</span><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" type="text" inputmode="decimal" value="'+m.price+'" data-act="price" data-id="'+m.id+'" aria-label="Price of '+e(m.name)+'"></label><span class="ac">'+(m.img?'<button class="ib" data-act="rmimg" data-id="'+m.id+'" aria-label="Remove photo" title="Remove photo">'+CAMX+'</button>':'<label class="ib cam" title="Add photo" aria-label="Add photo">'+CAM+'<input type="file" accept="image/*" data-act="photo" data-id="'+m.id+'" hidden></label>')+''+tg(m,'sg','Sugar')+tg(m,'ic','Ice')+tg(m,'hot','Hot')+tg(m,'tp','Topping')+'<button class="ib trash" data-act="del" data-id="'+m.id+'" aria-label="Delete '+e(m.name)+'" title="Delete item">'+TRASH+'</button></span></div>'}).join('')||'<p class="empty">No items in this category.</p>')+'</div>';
+    return '<div class="panel gap"><div class="row" style="border:0;padding-top:0"><h2 style="margin:0">'+e(c)+'</h2><span class="inl"><span class="ctype"><button data-act="ctype" data-v="'+e(c)+'" data-t="drink" aria-pressed="'+(!isFood(c))+'">Drink</button><button data-act="ctype" data-v="'+e(c)+'" data-t="food" aria-pressed="'+isFood(c)+'">Food</button></span>'+(its.length?'':'<button class="x" data-act="delcat" data-v="'+e(c)+'">Delete category</button>')+'</span></div>'+
+    (its.map(function(m){return '<div class="row mrow"><span class="ni">'+(m.img?'<img class="thumb" src="'+m.img+'" alt="">':'<span class="thumb">'+CUP.replace(/34/g,'22')+'</span>')+e(m.name)+'</span><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" type="text" inputmode="decimal" value="'+m.price+'" data-act="price" data-id="'+m.id+'" aria-label="Price of '+e(m.name)+'"></label><span class="ac">'+(m.img?'<button class="ib" data-act="rmimg" data-id="'+m.id+'" aria-label="Remove photo" title="Remove photo">'+CAMX+'</button>':'<label class="ib cam" title="Add photo" aria-label="Add photo">'+CAM+'<input type="file" accept="image/*" data-act="photo" data-id="'+m.id+'" hidden></label>')+''+(isFood(m.cat)?'':tg(m,'sg','Sugar')+tg(m,'ic','Ice')+tg(m,'hot','Hot'))+tg(m,'tp','Topping')+'<button class="ib trash" data-act="del" data-id="'+m.id+'" aria-label="Delete '+e(m.name)+'" title="Delete item">'+TRASH+'</button></span></div>'}).join('')||'<p class="empty">No items in this category.</p>')+'</div>';
   }).join('');
   return '<h1 class="page">Menu</h1><div class="mset"><div class="panel"><h2>1. Add a drink</h2><div class="stack"><input id="n" placeholder="Name, e.g. Mocha"><label class="pwrap wide"><i>'+e(S.cur)+'</i><input class="pin" id="p" type="text" inputmode="decimal" placeholder="Price"></label><select id="c">'+opts+'</select><label class="btn sm ghost lbl"><span id="npt">'+(pendingImg?'Photo added ✓':'Add photo')+'</span><input type="file" accept="image/*" id="np" data-act="newphoto" hidden></label><button class="btn" data-act="additem">Add to menu</button></div></div>'+
-  '<div class="panel"><h2>2. Add category</h2><div class="stack"><input id="nc" placeholder="New category, e.g. Smoothies"><button class="btn" data-act="addcat">Add category</button></div></div><div class="panel"><h2>3. Currency exchange</h2><div class="stack"><label class="mute" for="cur">Currency symbol</label><div class="inl"><input id="cur" value="'+e(S.cur)+'" maxlength="4" style="width:80px" aria-label="Currency symbol"><button class="btn sm ghost" data-act="setcur">Set symbol</button></div><label class="mute" for="rate">Exchange rate · Receive</label><div class="inl"><span class="mute">1 $ =</span><input id="rate" type="text" inputmode="numeric" value="'+(S.rate||4100)+'" style="width:96px" aria-label="Receive rate, riel per dollar"><span class="mute">KHR</span></div><div class="hint">Used when the customer pays in riel.</div><label class="mute" for="refund">Exchange rate · Refund</label><div class="inl"><span class="mute">1 $ =</span><input id="refund" type="text" inputmode="numeric" value="'+(S.refund||4000)+'" style="width:96px" aria-label="Refund rate, riel per dollar"><span class="mute">KHR</span></div><div class="hint">Used when you give change back in riel.</div><button class="btn" data-act="setrate">Save rates</button></div></div></div>'+logoPanel()+topPanel()+rows;
+  '<div class="panel"><h2>2. Add category</h2><div class="stack"><input id="nc" placeholder="New category, e.g. Smoothies" value="'+e(newCn)+'"><div class="ctype" role="group" aria-label="Category type"><button data-act="nct" data-t="drink" aria-pressed="'+(newCt==='drink')+'">Drink</button><button data-act="nct" data-t="food" aria-pressed="'+(newCt==='food')+'">Food</button></div><div class="hint" style="margin:0">Food items skip the sugar, ice and hot options.</div><button class="btn" data-act="addcat">Add category</button></div></div><div class="panel"><h2>3. Currency exchange</h2><div class="stack"><label class="mute" for="cur">Currency symbol</label><div class="inl"><input id="cur" value="'+e(S.cur)+'" maxlength="4" style="width:80px" aria-label="Currency symbol"><button class="btn sm ghost" data-act="setcur">Set symbol</button></div><label class="mute" for="rate">Exchange rate · Receive</label><div class="inl"><span class="mute">1 $ =</span><input id="rate" type="text" inputmode="numeric" value="'+(S.rate||4100)+'" style="width:96px" aria-label="Receive rate, riel per dollar"><span class="mute">KHR</span></div><div class="hint">Used when the customer pays in riel.</div><label class="mute" for="refund">Exchange rate · Refund</label><div class="inl"><span class="mute">1 $ =</span><input id="refund" type="text" inputmode="numeric" value="'+(S.refund||4000)+'" style="width:96px" aria-label="Refund rate, riel per dollar"><span class="mute">KHR</span></div><div class="hint">Used when you give change back in riel.</div><button class="btn" data-act="setrate">Save rates</button></div></div></div>'+logoPanel()+topPanel()+rows;
 }
 function viewReport(){
   var sales=S.sales.filter(function(s){return dkey(new Date(s.t))===day});
@@ -414,7 +419,7 @@ app.addEventListener('click',function(ev){
   else if(act==='charge'){
     var items=cart.filter(function(l){return find(l.id)}).map(function(l){var m=find(l.id);return{name:m.name,cat:m.cat,price:lineUnit(l,m),qty:l.qty,sugar:l.sugar,ice:l.ice,top:l.top||[]}});
     if(!items.length)return;
-    var tot=cartTotal(),cc=pay==='cash'?calc():null;if(cc&&cc.d<-0.004){toast('Cash received is less than the total');return}var chg=cc?Math.max(0,cc.d):0;S.sales.push({id:Date.now(),t:Date.now(),items:items,total:tot,pay:pay,bank:pay==='khqr'?bank:'',recv:cc?cc.usd:undefined,change:cc?chg:undefined});cart=[];sel=null;save();day=dkey(new Date());done={total:tot,items:items,pm:payLabel({pay:pay,bank:pay==='khqr'?bank:''}),cash:cc?{rt:recvCur==='khr'?cc.v.toLocaleString('en-US')+' KHR':$(cc.v),change:chg}:null};recv='';render();renderPick();return
+    var tot=cartTotal(),cc=pay==='cash'?calc():null;if(pay==='cash'&&!cc){toast('Enter the cash received to complete the order.');var rv0=document.getElementById('recv');if(rv0)rv0.focus();return}if(cc&&cc.d<-0.004){toast('Cash received is less than the total');return}var chg=cc?Math.max(0,cc.d):0;S.sales.push({id:Date.now(),t:Date.now(),items:items,total:tot,pay:pay,bank:pay==='khqr'?bank:'',recv:cc?cc.usd:undefined,change:cc?chg:undefined});cart=[];sel=null;save();day=dkey(new Date());done={total:tot,items:items,pm:payLabel({pay:pay,bank:pay==='khqr'?bank:''}),cash:cc?{rt:recvCur==='khr'?cc.v.toLocaleString('en-US')+' KHR':$(cc.v),change:chg}:null};recv='';render();renderPick();return
   }
   else if(act==='additem'){
     var n=document.getElementById('n').value.trim(),p=parseFloat(document.getElementById('p').value),c=document.getElementById('c').value;
@@ -424,8 +429,10 @@ app.addEventListener('click',function(ev){
   else if(act==='tgl'){var mt=find(id),f=b.dataset.f;if(mt){mt[f]=(f==='hot'||f==='tp')?!(mt[f]===true):(mt[f]===false);save()}}
   else if(act==='rmimg'){var mi=find(id);if(mi){delete mi.img;save()}}
   else if(act==='del'){S.menu=S.menu.filter(function(m){return m.id!=id});cart=cart.filter(function(l){return l.id!=id});save()}
-  else if(act==='addcat'){var v=document.getElementById('nc').value.trim();if(!v||S.cats.indexOf(v)>-1)return;S.cats.push(v);save()}
-  else if(act==='delcat'){S.cats=S.cats.filter(function(c){return c!==b.dataset.v});save()}
+  else if(act==='nct'){newCt=b.dataset.t}
+  else if(act==='ctype'){var cn=b.dataset.v,ci=S.food.indexOf(cn);if(b.dataset.t==='food'){if(ci<0)S.food.push(cn)}else if(ci>-1)S.food.splice(ci,1);save()}
+  else if(act==='addcat'){var v=document.getElementById('nc').value.trim();if(!v||S.cats.indexOf(v)>-1)return;S.cats.push(v);if(newCt==='food')S.food.push(v);newCn='';save()}
+  else if(act==='delcat'){S.cats=S.cats.filter(function(c){return c!==b.dataset.v});S.food=S.food.filter(function(c){return c!==b.dataset.v});save()}
   else if(act==='setrate'){var rv=parseFloat(document.getElementById('rate').value),rf=parseFloat(document.getElementById('refund').value);if(rv>0&&rf>0){S.rate=rv;S.refund=rf;save();toast('Rates saved')}else{toast('Enter both riel rates, e.g. 4100 and 4000')}}
   else if(act==='setcur'){S.cur=document.getElementById('cur').value||'$';save()}
   else if(act==='rview'){var rs=S.sales.filter(function(s){return s.id==id})[0];if(rs){done=toDone(rs);renderPick()}return}
@@ -444,7 +451,7 @@ app.addEventListener('click',function(ev){
   else return;
   render();
 });
-app.addEventListener('input',function(ev){if(ev.target.id==='recv'){ev.target.value=ev.target.value.replace(/[^0-9.]/g,'');recv=ev.target.value;var c=document.getElementById('chg');if(c)c.innerHTML=chgText()}});
+app.addEventListener('input',function(ev){if(ev.target.id==='nc')newCn=ev.target.value;if(ev.target.id==='recv'){ev.target.value=ev.target.value.replace(/[^0-9.]/g,'');recv=ev.target.value;var c=document.getElementById('chg');if(c)c.innerHTML=chgText();var cb=document.querySelector('button[data-act="charge"]');if(cb)cb.disabled=!canPay()}});
 app.addEventListener('change',function(ev){
   var t=ev.target;
   if(t.dataset.act==='price'){var m=find(t.dataset.id),v=parseFloat(t.value);if(m&&!isNaN(v)&&v>=0){m.price=v;save()}}
@@ -467,7 +474,7 @@ window.addEventListener('pointerup',endSwipe);window.addEventListener('pointerca
 document.getElementById('app').addEventListener('click',function(ev){if(swiped){ev.stopPropagation();ev.preventDefault()}},true);
 var PENCIL='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>';
 function rielHtml(){var r=S.rate||4100,v=Math.round(cartTotal()*r/100)*100;return '<div class="riel"><span>Total in Riel</span><span><b>'+v.toLocaleString('en-US')+'</b><i class="rs">KHR</i></span></div>'}
-var pay='cash',bank='ABA KHQR',BANKS=['ABA KHQR','ACLEDA KHQR'],recv='',recvCur='usd',done=null,cdel=null,sel=null,animNext=true,PAYN={cash:'Cash',khqr:'KHQR',card:'Credit/Debit Card'};
+var pay='cash',bank='ABA KHQR',BANKS=['ABA KHQR','ACLEDA KHQR'],recv='',recvCur='usd',done=null,cdel=null,sel=null,animNext=true,newCt='drink',newCn='',PAYN={cash:'Cash',khqr:'KHQR',card:'Credit/Debit Card'};
 function doneHtml(){
   var rows=done.items.map(function(i){return '<div class="row"><div><b>'+e(i.name)+'</b>'+(optText(i)?'<div class="mute">'+e(optText(i))+'</div>':'')+'</div><span class="mute">'+i.qty+' × '+$(i.price)+'</span></div>'}).join('');
   var h='<div class="sheet done" role="dialog" aria-modal="true" aria-label="Order completed"><div class="okmark"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h2 class="dt">'+(done.title||'Order completed')+'</h2>'+(done.when?'<div class="dwhen">'+e(done.when)+'</div>':'')+'<div class="dl">'+rows+'</div><div class="row"><span class="mute">Total USD</span><b>'+$(done.total)+'</b></div><div class="row"><span class="mute">Total Riel</span><b>'+rielFmt(done.total)+'<i class="rs">KHR</i></b></div><div class="row"><span class="mute">Payment</span><b>'+e(done.pm)+'</b></div>';
@@ -476,8 +483,9 @@ function doneHtml(){
 function rielFmt(u){return (Math.round(u*(S.rate||4100)/100)*100).toLocaleString('en-US')}
 function refundFmt(u){return (Math.round(u*(S.refund||4000)/100)*100).toLocaleString('en-US')}
 function calc(){var v=parseFloat(recv);if(isNaN(v))return null;var r=S.rate||4100,t=cartTotal();return{v:v,usd:recvCur==='khr'?v/r:v,d:recvCur==='khr'?(v-Math.round(t*r/100)*100)/r:v-t}}
+function canPay(){if(!cart.length)return false;if(pay!=='cash')return true;var c=calc();return !!c&&c.d>=-0.004}
 function chgText(){var c=calc();if(!c)return '';if(c.d<-0.004)return '<span class="bad">Short by '+$(-c.d)+' · '+rielFmt(-c.d)+' KHR</span>';return '<span>Change</span><b>'+$(c.d)+' · '+refundFmt(c.d)+'<i class="rs">KHR</i></b>'}
-function fs(m){return m.sg!==false}function fi(m){return m.ic!==false}function fh(m){return m.hot===true}function fp(m){return m.tp===true}
+function isFood(c){return S.food.indexOf(c)>-1}function fs(m){return m.sg!==false&&!isFood(m.cat)}function fi(m){return m.ic!==false&&!isFood(m.cat)}function fh(m){return m.hot===true&&!isFood(m.cat)}function fp(m){return m.tp===true}
 function optText(l){var p=[];if(l.sugar)p.push(l.sugar+' sugar');if(l.ice)p.push(l.ice);if(l.top&&l.top.length)p.push('+ '+l.top.join(', '));return p.join(' · ')}
 function hasOpt(l){return !!(l.sugar||l.ice||(l.top&&l.top.length))}
 function tg(m,f,t){var on=(f==='hot'||f==='tp')?m[f]===true:m[f]!==false;return '<button class="btn sm ghost mini tog '+(on?'on':'off')+'" data-act="tgl" data-id="'+m.id+'" data-f="'+f+'" aria-pressed="'+on+'" title="'+t+(on?': on':': off')+'">'+t+'</button>'}
@@ -519,13 +527,15 @@ function topPanel(){var rows=S.tops.map(function(t){return '<div class="row"><sp
   return '<div class="panel gap"><h2>Toppings</h2><div class="hint" style="margin:0 0 8px">Turn the Topping button on for a drink to offer these toppings.</div>'+rows+'<div class="form" style="margin:12px 0 0"><input class="n" id="tn" placeholder="New topping, e.g. Boba"><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" id="tp" type="text" inputmode="decimal" placeholder="Price"></label><button class="btn sm" data-act="taddt">Add topping</button></div></div>'}
 function cartBar(){var n=0;cart.forEach(function(l){n+=l.qty});return n?'<button class="cbar" data-act="gocart"><span>'+n+(n>1?' items':' item')+' · '+$(cartTotal())+'</span><b>View order</b></button>':''}
 function reportData(d){var sales=S.sales.filter(function(s){return dkey(new Date(s.t))===d}),total=0,qty=0,byItem={},byCat={},byPay={};sales.forEach(function(s){total+=s.total;var pl=payLabel(s);byPay[pl]=(byPay[pl]||0)+s.total;s.items.forEach(function(i){qty+=i.qty;byItem[i.name]=byItem[i.name]||{q:0,r:0};byItem[i.name].q+=i.qty;byItem[i.name].r+=i.qty*i.price;byCat[i.cat]=(byCat[i.cat]||0)+i.qty*i.price})});return{sales:sales,total:total,qty:qty,byItem:byItem,byCat:byCat,byPay:byPay}}
+function pdfFallback(blob,name){var md=document.getElementById('modal'),url=blob?URL.createObjectURL(blob):'';
+  md.innerHTML='<div class="sheet" role="dialog" aria-modal="true" aria-label="Save report"><div class="warn" style="background:var(--acc-soft);color:var(--acc);font-weight:700;font-size:.8rem">PDF</div><h2 class="dt" style="color:var(--ink)">'+(blob?'Your report is ready':'Could not make the PDF')+'</h2><p class="cmsg">'+(blob?'This view cannot save files by itself. Tap Download PDF, or use Print and choose Save as PDF.':'The PDF tool did not load. You can use Print and choose Save as PDF instead.')+'</p><div class="acts">'+(blob?'<a class="btn" href="'+url+'" download="'+e(name)+'" target="_blank" rel="noopener">Download PDF</a>':'')+'<button class="btn ghost" data-pk="print">Print</button></div><div class="acts" style="margin-top:8px"><button class="btn ghost" data-pk="pdfx">Close</button></div></div>';md.hidden=false}
 async function makePdf(){
   var J=window.jspdf&&window.jspdf.jsPDF;
-  if(!J){toast('The PDF tool did not load. Check your connection and try again.');return}
+  if(!J){pdfFallback(null,'');return}
   var R=reportData(day);
   if(!R.sales.length){toast('No orders on this day to save.');return}
-  var dl=null;try{dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(x){}
-  if(!dl){toast('Saving files is not available in this view.');return}
+  var dl=null;try{dl=window.claude&&window.claude.use?await Promise.race([window.claude.use('downloads'),new Promise(function(r){setTimeout(function(){r(null)},3000)})]):null}catch(x){}
+  
   var doc=new J({unit:'mm',format:'a4'}),W=210,M=16,y=20,P=function(s){return String(s).replace(/[^\x20-\xff]/g,'?')};
   function need(h){if(y+h>284){doc.addPage();y=20}}
   function txt(t,x,o,font,size,col){doc.setFont('helvetica',font);doc.setFontSize(size);doc.setTextColor(col[0],col[1],col[2]);doc.text(P(t),x,y,o)}
@@ -558,7 +568,9 @@ async function makePdf(){
     y+=2.5;
   });
   need(12);y+=6;txt('Generated '+new Date().toLocaleString('en-GB'),M,{},'normal',8.5,[140,140,140]);
-  try{await dl.save({filename:'Daily-Report-'+day+'.pdf',data:doc.output('arraybuffer')});toast('PDF saved')}catch(x){if(!x||x.code!=='declined')toast('Could not save the PDF')}
+  var fname='Daily-Report-'+day+'.pdf';
+  if(dl){try{await dl.save({filename:fname,data:doc.output('arraybuffer')});toast('PDF saved');return}catch(x){if(x&&x.code==='declined')return}}
+  pdfFallback(doc.output('blob'),fname);
 }
 function payLabel(s){return s.pay==='khqr'?(s.bank||'KHQR'):(PAYN[s.pay]||'Not recorded')}
 function payHtml(){
@@ -578,21 +590,16 @@ function renderPick(){var md=document.getElementById('modal');
 document.getElementById('modal').addEventListener('click',function(ev){
   var b=ev.target.closest('[data-pk]');
   if(!b){if(ev.target.id==='modal'){pick=null;done=null;cdel=null;renderPick()}return}
-  var k=b.dataset.pk;if(k==='delno'){cdel=null;renderPick();return}if(k==='delyes'){var did=cdel;S.sales=S.sales.filter(function(s){return s.id!=did});cdel=null;save();toast('Receipt deleted');render();renderPick();return}if(k==='done'){done=null;renderPick();return}
+  var k=b.dataset.pk;if(k==='pdfx'){renderPick();return}if(k==='print'){window.print();return}if(k==='delno'){cdel=null;renderPick();return}if(k==='delyes'){var did=cdel;S.sales=S.sales.filter(function(s){return s.id!=did});cdel=null;save();toast('Receipt deleted');render();renderPick();return}if(k==='done'){done=null;renderPick();return}
   if(k==='cancel'){pick=null}
   else if(k==='ok'){var pm2=find(pick.id);pick.sugar=fs(pm2)?pick.sugar:'';pick.ice=pick.temp==='Hot'?'Hot':(fi(pm2)?pick.ice:(pick.temp==='Cold'?'Cold':''));if(pick.edit){var ol=cart.filter(function(x){return x.key===pick.edit})[0];if(ol){var nk=pick.id+'|'+pick.sugar+'|'+pick.ice,ex=cart.filter(function(x){return x.key===nk&&x!==ol})[0];if(ex){ex.qty+=ol.qty;cart=cart.filter(function(x){return x!==ol})}else{ol.sugar=pick.sugar;ol.ice=pick.ice;ol.key=nk}}}else{lineAdd(pick.id,pick.sugar,pick.ice);lastOpt={sugar:pick.sugar||lastOpt.sugar,ice:ICE.indexOf(pick.ice)>-1?pick.ice:lastOpt.ice}}pick=null;render()}
   else{pick[k]=b.dataset.v}
   renderPick()});
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&(pick||done||cdel)){pick=null;done=null;cdel=null;renderPick()}});
-var TKEY='coffee-pos-theme',th='light';
-try{th=localStorage.getItem(TKEY)||'light'}catch(e){}
-function applyTheme(){var r=document.documentElement;if(th==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',th);document.querySelectorAll('#seg button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.th===th)})}
-document.getElementById('seg').addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b)return;th=b.dataset.th;try{localStorage.setItem(TKEY,th)}catch(e){}applyTheme()});
 ['gesturestart','gesturechange','gestureend'].forEach(function(n){document.addEventListener(n,function(ev){ev.preventDefault()})});
 document.addEventListener('touchmove',function(ev){if(ev.touches&&ev.touches.length>1)ev.preventDefault()},{passive:false});
 document.addEventListener('wheel',function(ev){if(ev.ctrlKey)ev.preventDefault()},{passive:false});
 document.addEventListener('keydown',function(ev){if((ev.ctrlKey||ev.metaKey)&&['+','-','=','_','0'].indexOf(ev.key)>-1)ev.preventDefault()});
-applyTheme();
 setLogos();
 setApp();
 render();
