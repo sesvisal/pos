@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>Sal &amp; Nea Coffee</title>
+<title>POS</title>
 <link id="fav" rel="icon" type="image/png" sizes="16x16" href="">
 <link id="fav2" rel="icon" type="image/png" sizes="32x32" href="">
 <link id="ati" rel="apple-touch-icon" href="">
@@ -29,7 +29,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,label:focus-within
 @media (prefers-reduced-motion:reduce){.drawer,.scrim{transition:none}}
 .dhead{font-weight:700;font-size:1.05rem;padding:4px 12px 18px;display:flex;align-items:center;gap:10px}
 .logo{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line);background:var(--soft)}.logo.big{width:88px;height:88px}
-.lrow{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.lrow .stack{flex:1 1 200px;max-width:280px}.logoset .hint{margin:12px 0 0}
+.lrow{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.lrow .stack{flex:1 1 220px;max-width:380px}.logoset .hint{margin:12px 0 0}
 .rhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:8px;margin-bottom:2px;border-bottom:1px solid var(--line)}
 .rrow{cursor:pointer}.rrow>div{min-width:0}.rsum{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
 .dwhen{text-align:center;color:var(--mute);margin:-8px 0 12px;font-size:.9rem}
@@ -281,18 +281,63 @@ html,body{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%}
 .ctype{display:inline-flex;gap:3px;background:var(--soft);padding:3px;border-radius:999px;justify-self:start}
 .ctype button{border:0;background:none;padding:6px 14px;border-radius:999px;cursor:pointer;color:var(--mute);font-weight:600;font-size:.84rem}
 .ctype button[aria-pressed="true"]{background:linear-gradient(135deg,#6aa5ff,#3b7df5);color:#fff}
+
+.anim>*{animation:fade .18s ease both}
+.anim .items .card{animation:none}
+
+.mopts{flex:1 1 100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;background:var(--soft);border-radius:12px}
+.ib.pen[aria-expanded="true"]{background:var(--acc-soft)}
+
+.mset{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+@media(max-width:900px){.mset{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}}
+
+.mset{grid-template-columns:1fr;align-items:stretch}
+@media(min-width:620px){.mset{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.mset{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.mset>.panel{display:flex;flex-direction:column}
+.mset .stack{display:flex;flex-direction:column;gap:10px;flex:1}
+.mset .stack>.btn:last-child{margin-top:auto}
+.mset .stack input,.mset .stack select{height:42px}
+.stack>.btn{height:42px;padding:0 14px;display:flex;align-items:center;justify-content:center}
+.stack>.pwrap,.stack>.pwrap.wide{width:100%;height:42px}
+.stack>.ctype{align-self:flex-start}
+.mset .inl{display:flex;gap:10px;align-items:center;flex-wrap:nowrap}
+.mset .inl input{height:42px}.mset .inl .btn.sm{height:42px;white-space:nowrap}
+
+.addtabs{display:flex;width:100%;margin-bottom:12px}.addtabs button{flex:1}
+@media(min-width:1100px){.mset{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px}}
+
+.fld{display:grid;gap:6px}.logoset .inl input{height:42px}.logoset .inl .btn.sm{height:42px;white-space:nowrap}
+
+.rtool2{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.dpick{position:relative}
+.dbtn{display:flex;align-items:center;justify-content:center;gap:10px;height:44px;min-width:200px;padding:0 18px;border:1px solid var(--line);border-radius:12px;background:var(--field);color:var(--ink);font-weight:600;cursor:pointer}
+.dbtn svg{color:var(--acc)}
+.cal{position:absolute;z-index:25;top:calc(100% + 8px);left:0;width:300px;max-width:calc(100vw - 28px);background:var(--surf);border-radius:18px;padding:14px;box-shadow:0 14px 36px rgba(40,70,130,.22)}
+.chead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cdow,.cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cdow span{font-size:.75rem;color:var(--mute);font-weight:600;padding:4px 0}
+.cd{height:36px;border:0;border-radius:10px;background:none;cursor:pointer;color:var(--ink);position:relative;font-weight:500}
+.cd:hover{background:var(--acc-soft)}
+.cd.now{box-shadow:inset 0 0 0 1.5px var(--acc)}
+.cd.on{background:linear-gradient(135deg,#6aa5ff,#3b7df5);color:#fff;font-weight:700}
+.cd.has::after{content:"";position:absolute;bottom:4px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--acc)}
+.cd.on.has::after{background:#fff}
+.dlbar{margin-top:6px}
+@media(max-width:600px){.cal{position:fixed;left:14px;right:14px;top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);width:auto;max-width:none}.dbtn{min-width:0;padding:0 12px}}
+@media print{.rtool2,.dlbar{display:none!important}}
 </style>
 </head>
 <body>
 <div class="top">
   <button class="icon" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  <img class="logo" alt=""><div class="brand">Sal &amp; Nea Coffee</div>
+  <img class="logo" alt=""><div class="brand" id="brand">Sal &amp; Nea Coffee</div>
   <img class="appico" alt="POS app" src="">
 </div>
 <div class="scrim" id="scrim"></div>
 <div class="modal" id="modal" hidden></div>
 <aside class="drawer" id="drawer" aria-label="Main menu">
-  <div class="dhead"><img class="logo" alt=""><span>Sal &amp; Nea Coffee</span></div>
+  <div class="dhead"><img class="logo" alt=""><span class="dname">Sal &amp; Nea Coffee</span></div>
   <nav id="tabs">
     <button data-tab="sell" aria-selected="true">Order</button>
     <button data-tab="receipt" aria-selected="false">Receipt</button>
@@ -354,20 +399,30 @@ function viewSell(){
   if(S.cats.indexOf(cat)<0)cat=S.cats[0]||'';var cats=S.cats.map(function(c){return '<button class="cat" data-act="cat" data-v="'+e(c)+'" aria-pressed="'+(c===cat)+'">'+e(c)+'</button>'}).join('');
   var ids=cart.filter(function(l){return find(l.id)});
   var lines=ids.map(function(l){var m=find(l.id),tags=[];if(l.sugar)tags.push(l.sugar+' sugar');if(l.ice)tags.push(l.ice);(l.top||[]).forEach(function(n){tags.push('+ '+n)});
-    return '<div class="swipe'+(l.key===sel?' sel':'')+'"><div class="dw"><button class="ib" data-act="ldel" data-key="'+e(l.key)+'" aria-label="Remove '+e(m.name)+'" title="Remove">'+TRASH+'</button></div><div class="sl lrow"'+(canEdit(l)?' data-act="ledit" data-key="'+e(l.key)+'"':'')+'><div class="ltop"><b>'+e(m.name)+'</b><span class="lamt">'+$(lineUnit(l,m)*l.qty)+'</span></div>'+(tags.length?'<div class="ltags">'+tags.map(function(t){return '<span class="tag">'+e(t)+'</span>'}).join('')+'</div>':'')+'<div class="lctl"><div class="stp">'+(l.qty>1?'<button data-act="ldec" data-key="'+e(l.key)+'" aria-label="Remove one">−</button>':'')+'<b>'+l.qty+'</b><button data-act="linc" data-key="'+e(l.key)+'" aria-label="Add one">+</button></div>'+(l.qty>1?'<span class="each">'+$(lineUnit(l,m))+' each</span>':'')+(canEdit(l)?'<button class="ib pen" data-act="ledit" data-key="'+e(l.key)+'" aria-label="Edit '+e(m.name)+'" title="Edit options">'+PENCIL+'</button>':'')+'</div></div></div>'}).join('')||'<p class="empty">Tap a drink to start an order.</p>';
+    return '<div class="swipe'+(l.key===sel?' sel':'')+'"><div class="dw"><button class="ib" data-act="ldel" data-key="'+e(l.key)+'" aria-label="Remove '+e(m.name)+'" title="Remove">'+TRASH+'</button></div><div class="sl lrow"'+(canEdit(l)?' data-act="ledit" data-key="'+e(l.key)+'"':'')+'><div class="ltop"><b>'+e(m.name)+'</b><span class="lamt">'+$(lineUnit(l,m)*l.qty)+'</span></div>'+(tags.length?'<div class="ltags">'+tags.map(function(t){return '<span class="tag">'+e(t)+'</span>'}).join('')+'</div>':'')+'<div class="lctl"><div class="stp">'+(l.qty>1?'<button data-act="ldec" data-key="'+e(l.key)+'" aria-label="Remove one">−</button>':'')+'<b>'+l.qty+'</b><button data-act="linc" data-key="'+e(l.key)+'" aria-label="Add one">+</button></div>'+(l.qty>1?'<span class="each">'+$(lineUnit(l,m))+' each</span>':'')+(canEdit(l)?'<button class="ib pen" data-act="ledit" data-key="'+e(l.key)+'" aria-label="Edit '+e(m.name)+'" title="Edit options">'+PENCIL+'</button>':'')+'</div></div></div>'}).join('')||'';
   return '<div class="sell"><div class="cats">'+cats+'</div><div class="mid"><div class="items" id="items">'+itemsHtml()+'</div>'+optPanel()+'</div>'+
   '<aside class="panel cart" id="cart"><h2>Current order</h2><div class="clines">'+lines+'</div><div class="total"><span>Total</span><span>'+$(cartTotal())+'</span></div>'+rielHtml()+payHtml()+
   '<button class="btn" data-act="charge"'+(canPay()?'':' disabled')+'>Complete</button></aside></div>'+cartBar();
 }
+var CHL='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>',CHR='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',CALI='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>';
+function calHtml(){
+  var d0=calM||new Date(day+'T12:00:00'),y=d0.getFullYear(),m=d0.getMonth(),first=new Date(y,m,1),start=first.getDay(),dim=new Date(y,m+1,0).getDate(),have={},td=dkey(new Date()),cells='';
+  S.sales.forEach(function(s){have[dkey(new Date(s.t))]=1});
+  for(var i=0;i<start;i++)cells+='<span></span>';
+  for(var n=1;n<=dim;n++){var k=y+'-'+('0'+(m+1)).slice(-2)+'-'+('0'+n).slice(-2);cells+='<button class="cd'+(k===day?' on':'')+(k===td?' now':'')+(have[k]?' has':'')+'" data-act="pickday" data-d="'+k+'">'+n+'</button>'}
+  return '<div class="cal"><div class="chead"><button class="ib" data-act="calprev" aria-label="Previous month">'+CHL+'</button><b>'+first.toLocaleDateString('en-GB',{month:'long',year:'numeric'})+'</b><button class="ib" data-act="calnext" aria-label="Next month">'+CHR+'</button></div><div class="cdow"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div><div class="cgrid">'+cells+'</div></div>'}
+function addForm(opts){
+  if(addTab==='category')return '<div class="stack"><input id="nc" placeholder="New category, e.g. Smoothies" value="'+e(newCn)+'"><div class="ctype" role="group" aria-label="Category type"><button data-act="nct" data-t="drink" aria-pressed="'+(newCt==='drink')+'">Drink</button><button data-act="nct" data-t="food" aria-pressed="'+(newCt==='food')+'">Food</button></div><button class="btn" data-act="addcat">Add category</button></div>';
+  if(addTab==='topping')return '<div class="stack"><input id="tn" placeholder="New topping, e.g. Boba"><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" id="tp" type="text" inputmode="decimal" placeholder="Price"></label><button class="btn" data-act="taddt">Add topping</button></div>';
+  return '<div class="stack"><input id="n" placeholder="Name, e.g. Mocha"><label class="pwrap wide"><i>'+e(S.cur)+'</i><input class="pin" id="p" type="text" inputmode="decimal" placeholder="Price"></label><select id="c">'+opts+'</select><button class="btn" data-act="additem">Add to menu</button></div>'}
 function viewMenu(){
   var opts=S.cats.map(function(c){return '<option>'+e(c)+'</option>'}).join('');
   var rows=S.cats.map(function(c){
     var its=S.menu.filter(function(m){return m.cat===c});
     return '<div class="panel gap"><div class="row" style="border:0;padding-top:0"><h2 style="margin:0">'+e(c)+'</h2><span class="inl"><span class="ctype"><button data-act="ctype" data-v="'+e(c)+'" data-t="drink" aria-pressed="'+(!isFood(c))+'">Drink</button><button data-act="ctype" data-v="'+e(c)+'" data-t="food" aria-pressed="'+isFood(c)+'">Food</button></span>'+(its.length?'':'<button class="x" data-act="delcat" data-v="'+e(c)+'">Delete category</button>')+'</span></div>'+
-    (its.map(function(m){return '<div class="row mrow"><span class="ni">'+(m.img?'<img class="thumb" src="'+m.img+'" alt="">':'<span class="thumb">'+CUP.replace(/34/g,'22')+'</span>')+e(m.name)+'</span><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" type="text" inputmode="decimal" value="'+m.price+'" data-act="price" data-id="'+m.id+'" aria-label="Price of '+e(m.name)+'"></label><span class="ac">'+(m.img?'<button class="ib" data-act="rmimg" data-id="'+m.id+'" aria-label="Remove photo" title="Remove photo">'+CAMX+'</button>':'<label class="ib cam" title="Add photo" aria-label="Add photo">'+CAM+'<input type="file" accept="image/*" data-act="photo" data-id="'+m.id+'" hidden></label>')+''+(isFood(m.cat)?'':tg(m,'sg','Sugar')+tg(m,'ic','Ice')+tg(m,'hot','Hot'))+tg(m,'tp','Topping')+'<button class="ib trash" data-act="del" data-id="'+m.id+'" aria-label="Delete '+e(m.name)+'" title="Delete item">'+TRASH+'</button></span></div>'}).join('')||'<p class="empty">No items in this category.</p>')+'</div>';
+    (its.map(function(m){return '<div class="row mrow"><span class="ni">'+(m.img?'<img class="thumb" src="'+m.img+'" alt="">':'<span class="thumb">'+CUP.replace(/34/g,'22')+'</span>')+e(m.name)+'</span><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" type="text" inputmode="decimal" value="'+m.price+'" data-act="price" data-id="'+m.id+'" aria-label="Price of '+e(m.name)+'"></label><span class="ac">'+(m.img?'<button class="ib" data-act="rmimg" data-id="'+m.id+'" aria-label="Remove photo" title="Remove photo">'+CAMX+'</button>':'<label class="ib cam" title="Add photo" aria-label="Add photo">'+CAM+'<input type="file" accept="image/*" data-act="photo" data-id="'+m.id+'" hidden></label>')+''+'<button class="ib pen" data-act="mopt" data-id="'+m.id+'" aria-label="Edit options" aria-expanded="'+(openOpt==m.id)+'" title="Edit options">'+PENCIL+'</button>'+'<button class="ib trash" data-act="del" data-id="'+m.id+'" aria-label="Delete '+e(m.name)+'" title="Delete item">'+TRASH+'</button></span>'+(openOpt==m.id?'<div class="mopts"><span class="mute" style="width:100%;font-size:.8rem">Choose what customers can pick</span>'+(isFood(m.cat)?'':tg(m,'sg','Sugar')+tg(m,'ic','Ice')+tg(m,'hot','Hot'))+tg(m,'tp','Topping')+'</div>':'')+'</div>'}).join('')||'<p class="empty">No items in this category.</p>')+'</div>';
   }).join('');
-  return '<h1 class="page">Menu</h1><div class="mset"><div class="panel"><h2>1. Add a drink</h2><div class="stack"><input id="n" placeholder="Name, e.g. Mocha"><label class="pwrap wide"><i>'+e(S.cur)+'</i><input class="pin" id="p" type="text" inputmode="decimal" placeholder="Price"></label><select id="c">'+opts+'</select><label class="btn sm ghost lbl"><span id="npt">'+(pendingImg?'Photo added ✓':'Add photo')+'</span><input type="file" accept="image/*" id="np" data-act="newphoto" hidden></label><button class="btn" data-act="additem">Add to menu</button></div></div>'+
-  '<div class="panel"><h2>2. Add category</h2><div class="stack"><input id="nc" placeholder="New category, e.g. Smoothies" value="'+e(newCn)+'"><div class="ctype" role="group" aria-label="Category type"><button data-act="nct" data-t="drink" aria-pressed="'+(newCt==='drink')+'">Drink</button><button data-act="nct" data-t="food" aria-pressed="'+(newCt==='food')+'">Food</button></div><div class="hint" style="margin:0">Food items skip the sugar, ice and hot options.</div><button class="btn" data-act="addcat">Add category</button></div></div><div class="panel"><h2>3. Currency exchange</h2><div class="stack"><label class="mute" for="cur">Currency symbol</label><div class="inl"><input id="cur" value="'+e(S.cur)+'" maxlength="4" style="width:80px" aria-label="Currency symbol"><button class="btn sm ghost" data-act="setcur">Set symbol</button></div><label class="mute" for="rate">Exchange rate · Receive</label><div class="inl"><span class="mute">1 $ =</span><input id="rate" type="text" inputmode="numeric" value="'+(S.rate||4100)+'" style="width:96px" aria-label="Receive rate, riel per dollar"><span class="mute">KHR</span></div><div class="hint">Used when the customer pays in riel.</div><label class="mute" for="refund">Exchange rate · Refund</label><div class="inl"><span class="mute">1 $ =</span><input id="refund" type="text" inputmode="numeric" value="'+(S.refund||4000)+'" style="width:96px" aria-label="Refund rate, riel per dollar"><span class="mute">KHR</span></div><div class="hint">Used when you give change back in riel.</div><button class="btn" data-act="setrate">Save rates</button></div></div></div>'+logoPanel()+topPanel()+rows;
+  return '<h1 class="page">Menu</h1><div class="mset"><div class="panel"><h2>Add</h2><div class="ctype addtabs" role="tablist" aria-label="What to add"><button data-act="atab" data-t="drink" aria-pressed="'+(addTab==='drink')+'">Drink</button><button data-act="atab" data-t="category" aria-pressed="'+(addTab==='category')+'">Category</button><button data-act="atab" data-t="topping" aria-pressed="'+(addTab==='topping')+'">Topping</button></div>'+addForm(opts)+'</div><div class="panel"><h2>Currency exchange</h2><div class="stack"><label class="mute" for="cur">Currency symbol</label><div class="inl"><input id="cur" value="'+e(S.cur)+'" maxlength="4" style="width:80px" aria-label="Currency symbol"><button class="btn sm ghost" data-act="setcur">Set symbol</button></div><label class="mute" for="rate">Exchange rate · Receive</label><div class="inl"><span class="mute">1 $ =</span><input id="rate" type="text" inputmode="numeric" value="'+(S.rate||4100)+'" style="width:96px" aria-label="Receive rate, riel per dollar"><span class="mute">KHR</span></div><label class="mute" for="refund">Exchange rate · Refund</label><div class="inl"><span class="mute">1 $ =</span><input id="refund" type="text" inputmode="numeric" value="'+(S.refund||4000)+'" style="width:96px" aria-label="Refund rate, riel per dollar"><span class="mute">KHR</span></div><button class="btn" data-act="setrate">Save rates</button></div></div></div>'+logoPanel()+rows+topPanel();
 }
 function viewReport(){
   var sales=S.sales.filter(function(s){return dkey(new Date(s.t))===day});
@@ -380,11 +435,11 @@ function viewReport(){
   var payRows=Object.keys(byPay).map(function(k){return '<div class="row"><span>'+e(k)+'</span><b>'+$(byPay[k])+'</b></div>'}).join('')||'<p class="empty">No payments yet.</p>';
   var wk='';
   for(var k=6;k>=0;k--){var d=new Date(day+'T12:00:00');d.setDate(d.getDate()-k);var key=dkey(d),sum=0;S.sales.forEach(function(s){if(dkey(new Date(s.t))===key)sum+=s.total});wk+='<div class="'+(k===0?'sel':'')+'"><span>'+$(sum).replace(/\.00$/,'')+'</span><u data-v="'+sum+'"></u><span>'+d.toLocaleDateString([],{weekday:'short'})+'</span></div>'}
-  return '<h1 class="page">Daily report</h1><div class="form rtool"><label class="mute" for="d">Date</label><input type="date" id="d" value="'+day+'" data-act="day"><button class="btn sm ghost" data-act="today">Today</button><button class="btn sm" data-act="pdf">Save as PDF</button></div>'+
+  return '<h1 class="page">Daily report</h1><div class="rtool2"><button class="ib" data-act="dprev" aria-label="Previous day" title="Previous day">'+CHL+'</button><div class="dpick"><button class="dbtn" data-act="caltoggle" aria-expanded="'+calOpen+'">'+CALI+'<span>'+new Date(day+'T12:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'})+'</span></button>'+(calOpen?calHtml():'')+'</div><button class="ib" data-act="dnext" aria-label="Next day" title="Next day">'+CHR+'</button><button class="btn sm ghost" data-act="today">Today</button></div>'+
   '<div class="stats"><div class="stat main"><small>Total sales</small><div>'+$(total)+'</div></div><div class="stat"><small>Orders</small><div>'+sales.length+'</div></div><div class="stat"><small>Drinks sold</small><div>'+qty+'</div></div><div class="stat"><small>Average order</small><div>'+$(avg)+'</div></div></div>'+
   '<div class="panel gap"><h2>Payments</h2>'+payRows+'</div><div class="panel gap"><h2>7 days up to this date</h2><div class="week" id="wk">'+wk+'</div></div>'+
   '<div class="cols gap"><div class="panel"><h2>Sales by category</h2>'+catRows+'</div><div class="panel"><h2>Drinks</h2>'+itemRows+'</div></div>'+
-  '';
+  '<div class="dlbar"><button class="btn" data-act="pdf">Download report</button></div>';
 }
 function render(){
   var a=document.getElementById('app');
@@ -405,9 +460,10 @@ document.getElementById('tabs').addEventListener('click',function(ev){var b=ev.t
 
 var app=document.getElementById('app');
 app.addEventListener('click',function(ev){
+  if(calOpen&&!ev.target.closest('.dpick')){calOpen=false;if(!ev.target.closest('[data-act]'))render()}
   if(sel&&window.innerWidth<761&&!ev.target.closest('.optp,.card,.swipe,.cbar,.cat')){sel=null;if(!ev.target.closest('[data-act]'))render()}
   var b=ev.target.closest('[data-act]');if(!b)return;var act=b.dataset.act,id=b.dataset.id;
-  if(act==='cat'){cat=b.dataset.v;animNext=true;var i0=document.getElementById('items');if(i0)i0.scrollTop=0}
+  if(act==='cat'){cat=b.dataset.v;document.querySelectorAll('.cat').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v===cat)});var i0=document.getElementById('items');if(i0){i0.innerHTML=itemsHtml();i0.scrollTop=0}return}
   else if(act==='add'){var pm=find(id);if(!pm)return;var dd=defOpts(pm);sel=lineAdd(id,dd.sugar,dd.ice,[])}
   else if(act==='linc'||act==='ldec'){var kk=b.dataset.key,ln=cart.filter(function(x){return x.key===kk})[0];if(ln){ln.qty+=act==='linc'?1:-1;if(ln.qty<=0)cart=cart.filter(function(x){return x!==ln})}}
   else if(act==='ledit'){sel=b.dataset.key}
@@ -429,6 +485,14 @@ app.addEventListener('click',function(ev){
   else if(act==='tgl'){var mt=find(id),f=b.dataset.f;if(mt){mt[f]=(f==='hot'||f==='tp')?!(mt[f]===true):(mt[f]===false);save()}}
   else if(act==='rmimg'){var mi=find(id);if(mi){delete mi.img;save()}}
   else if(act==='del'){S.menu=S.menu.filter(function(m){return m.id!=id});cart=cart.filter(function(l){return l.id!=id});save()}
+  else if(act==='savename'){var sn=document.getElementById('sname').value.trim();if(!sn){toast('Enter the shop name.');return}S.shop=sn;save();setBrand();toast('Shop name saved')}
+  else if(act==='caltoggle'){calOpen=!calOpen;calM=new Date(day+'T12:00:00');calM.setDate(1)}
+  else if(act==='calprev'){calM=new Date(calM.getFullYear(),calM.getMonth()-1,1)}
+  else if(act==='calnext'){calM=new Date(calM.getFullYear(),calM.getMonth()+1,1)}
+  else if(act==='pickday'){day=b.dataset.d;calOpen=false}
+  else if(act==='dprev'||act==='dnext'){var dd2=new Date(day+'T12:00:00');dd2.setDate(dd2.getDate()+(act==='dnext'?1:-1));day=dkey(dd2);calOpen=false}
+  else if(act==='atab'){addTab=b.dataset.t}
+  else if(act==='mopt'){openOpt=(openOpt==id?null:id)}
   else if(act==='nct'){newCt=b.dataset.t}
   else if(act==='ctype'){var cn=b.dataset.v,ci=S.food.indexOf(cn);if(b.dataset.t==='food'){if(ci<0)S.food.push(cn)}else if(ci>-1)S.food.splice(ci,1);save()}
   else if(act==='addcat'){var v=document.getElementById('nc').value.trim();if(!v||S.cats.indexOf(v)>-1)return;S.cats.push(v);if(newCt==='food')S.food.push(v);newCn='';save()}
@@ -444,7 +508,7 @@ app.addEventListener('click',function(ev){
   else if(act==='logoreset'){delete S.logo;save();setLogos();toast('Original logo restored')}
   else if(act==='pdf'){makePdf();return}
   else if(act==='gocart'){var ce=document.getElementById('cart');if(ce)ce.scrollIntoView({behavior:'smooth',block:'start'});return}
-  else if(act==='today'){day=dkey(new Date())}
+  else if(act==='today'){day=dkey(new Date());calOpen=false}
   else if(act==='void'){voidId=id}
   else if(act==='voidno'){voidId=null}
   else if(act==='voidyes'){S.sales=S.sales.filter(function(s){return s.id!=id});voidId=null;save();toast('Order voided')}
@@ -474,7 +538,7 @@ window.addEventListener('pointerup',endSwipe);window.addEventListener('pointerca
 document.getElementById('app').addEventListener('click',function(ev){if(swiped){ev.stopPropagation();ev.preventDefault()}},true);
 var PENCIL='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>';
 function rielHtml(){var r=S.rate||4100,v=Math.round(cartTotal()*r/100)*100;return '<div class="riel"><span>Total in Riel</span><span><b>'+v.toLocaleString('en-US')+'</b><i class="rs">KHR</i></span></div>'}
-var pay='cash',bank='ABA KHQR',BANKS=['ABA KHQR','ACLEDA KHQR'],recv='',recvCur='usd',done=null,cdel=null,sel=null,animNext=true,newCt='drink',newCn='',PAYN={cash:'Cash',khqr:'KHQR',card:'Credit/Debit Card'};
+var pay='cash',bank='ABA KHQR',BANKS=['ABA KHQR','ACLEDA KHQR'],recv='',recvCur='usd',done=null,cdel=null,sel=null,animNext=true,newCt='drink',newCn='',openOpt=null,addTab='drink',calOpen=false,calM=null,PAYN={cash:'Cash',khqr:'KHQR',card:'Credit/Debit Card'};
 function doneHtml(){
   var rows=done.items.map(function(i){return '<div class="row"><div><b>'+e(i.name)+'</b>'+(optText(i)?'<div class="mute">'+e(optText(i))+'</div>':'')+'</div><span class="mute">'+i.qty+' × '+$(i.price)+'</span></div>'}).join('');
   var h='<div class="sheet done" role="dialog" aria-modal="true" aria-label="Order completed"><div class="okmark"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h2 class="dt">'+(done.title||'Order completed')+'</h2>'+(done.when?'<div class="dwhen">'+e(done.when)+'</div>':'')+'<div class="dl">'+rows+'</div><div class="row"><span class="mute">Total USD</span><b>'+$(done.total)+'</b></div><div class="row"><span class="mute">Total Riel</span><b>'+rielFmt(done.total)+'<i class="rs">KHR</i></b></div><div class="row"><span class="mute">Payment</span><b>'+e(done.pm)+'</b></div>';
@@ -490,7 +554,9 @@ function optText(l){var p=[];if(l.sugar)p.push(l.sugar+' sugar');if(l.ice)p.push
 function hasOpt(l){return !!(l.sugar||l.ice||(l.top&&l.top.length))}
 function tg(m,f,t){var on=(f==='hot'||f==='tp')?m[f]===true:m[f]!==false;return '<button class="btn sm ghost mini tog '+(on?'on':'off')+'" data-act="tgl" data-id="'+m.id+'" data-f="'+f+'" aria-pressed="'+on+'" title="'+t+(on?': on':': off')+'">'+t+'</button>'}
 var CAM='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg>';
-function logoPanel(){return '<div class="panel gap logoset"><h2>Shop logo</h2><div class="lrow"><img class="logo big" alt="Current logo" src="'+(S.logo||LOGO0)+'"><div class="stack"><label class="btn ghost lbl">Change logo<input type="file" accept="image/*" data-act="logo" hidden></label>'+(S.logo?'<button class="btn ghost" data-act="logoreset">Use original logo</button>':'')+'</div></div><div class="hint">Choose a square picture. It shows as a circle next to your shop name.</div></div>'}
+function shopName(){return S.shop||'Sal & Nea Coffee'}
+function setBrand(){var n=shopName();document.querySelectorAll('.brand,.dname').forEach(function(x){x.textContent=n});document.title=n}
+function logoPanel(){return '<div class="panel gap logoset"><h2>Shop</h2><div class="lrow"><img class="logo big" alt="Current logo" src="'+(S.logo||LOGO0)+'"><div class="stack"><label class="fld"><span class="mute">Shop name</span><input id="sname" value="'+e(shopName())+'" maxlength="40"></label><div class="inl"><button class="btn sm" data-act="savename">Save name</button><label class="btn sm ghost lbl">Change logo<input type="file" accept="image/*" data-act="logo" hidden></label>'+(S.logo?'<button class="btn sm ghost" data-act="logoreset">Original logo</button>':'')+'</div></div></div></div>'}
 function logoFrom(file,cb){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(im.width,im.height),c=document.createElement('canvas'),x=c.getContext('2d');c.width=c.height=192;x.fillStyle='#fff';x.fillRect(0,0,192,192);x.drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,192,192);cb(c.toDataURL('image/jpeg',.88))};im.onerror=function(){toast('That file could not be read as a picture.')};im.src=r.result};r.readAsDataURL(file)}
 function setLogos(){document.querySelectorAll('img.logo').forEach(function(i){i.src=S.logo||LOGO0})}
 function toDone(s){var d=new Date(s.t);return{title:'Receipt',when:d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'})+' · '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),total:s.total,items:s.items,pm:payLabel(s),cash:s.recv!=null?{rt:$(s.recv),change:s.change||0}:null}}
@@ -524,7 +590,7 @@ function optPanel(){var l=selLine();if(!l)return '';var m=find(l.id);if(!m||!(fs
   if(fp(m)&&S.tops.length)h+='<div class="orow2"><div class="olab">Topping</div><div class="ochips wrapc">'+S.tops.map(function(t){return '<button class="oc" data-act="opt" data-k="top" data-v="'+e(t.name)+'" aria-pressed="'+((l.top||[]).indexOf(t.name)>-1)+'">'+e(t.name)+' <small>+'+$(t.price)+'</small></button>'}).join('')+'</div></div>';
   return h+'</div>'}
 function topPanel(){var rows=S.tops.map(function(t){return '<div class="row"><span>'+e(t.name)+'</span><span class="inl"><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" type="text" inputmode="decimal" value="'+t.price+'" data-act="tprice" data-name="'+e(t.name)+'" aria-label="Price of '+e(t.name)+'"></label><button class="ib trash" data-act="tdel" data-name="'+e(t.name)+'" aria-label="Delete '+e(t.name)+'" title="Delete topping">'+TRASH+'</button></span></div>'}).join('')||'<p class="empty">No toppings yet.</p>';
-  return '<div class="panel gap"><h2>Toppings</h2><div class="hint" style="margin:0 0 8px">Turn the Topping button on for a drink to offer these toppings.</div>'+rows+'<div class="form" style="margin:12px 0 0"><input class="n" id="tn" placeholder="New topping, e.g. Boba"><label class="pwrap"><i>'+e(S.cur)+'</i><input class="pin" id="tp" type="text" inputmode="decimal" placeholder="Price"></label><button class="btn sm" data-act="taddt">Add topping</button></div></div>'}
+  return '<div class="panel gap"><h2>Toppings</h2>'+rows+'</div>'}
 function cartBar(){var n=0;cart.forEach(function(l){n+=l.qty});return n?'<button class="cbar" data-act="gocart"><span>'+n+(n>1?' items':' item')+' · '+$(cartTotal())+'</span><b>View order</b></button>':''}
 function reportData(d){var sales=S.sales.filter(function(s){return dkey(new Date(s.t))===d}),total=0,qty=0,byItem={},byCat={},byPay={};sales.forEach(function(s){total+=s.total;var pl=payLabel(s);byPay[pl]=(byPay[pl]||0)+s.total;s.items.forEach(function(i){qty+=i.qty;byItem[i.name]=byItem[i.name]||{q:0,r:0};byItem[i.name].q+=i.qty;byItem[i.name].r+=i.qty*i.price;byCat[i.cat]=(byCat[i.cat]||0)+i.qty*i.price})});return{sales:sales,total:total,qty:qty,byItem:byItem,byCat:byCat,byPay:byPay}}
 function pdfFallback(blob,name){var md=document.getElementById('modal'),url=blob?URL.createObjectURL(blob):'';
@@ -542,7 +608,7 @@ async function makePdf(){
   function head(t){need(16);y+=5;txt(t,M,{},'bold',12,[59,125,245]);y+=2;doc.setDrawColor(225);doc.line(M,y,W-M,y);y+=6}
   function kv(l,r,b){need(7);txt(l,M,{},b?'bold':'normal',10.5,[30,30,30]);txt(r,W-M,{align:'right'},b?'bold':'normal',10.5,[30,30,30]);y+=6.5}
   var rate=S.rate||4100;
-  txt('Sal & Nea Coffee',M,{},'bold',18,[30,30,30]);y+=7;
+  txt(shopName(),M,{},'bold',18,[30,30,30]);y+=7;
   txt('Daily report',M,{},'normal',11,[110,110,110]);y+=6;
   txt(new Date(day+'T12:00:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),M,{},'bold',11,[30,30,30]);y+=4;
   head('Summary');
@@ -601,7 +667,9 @@ document.addEventListener('touchmove',function(ev){if(ev.touches&&ev.touches.len
 document.addEventListener('wheel',function(ev){if(ev.ctrlKey)ev.preventDefault()},{passive:false});
 document.addEventListener('keydown',function(ev){if((ev.ctrlKey||ev.metaKey)&&['+','-','=','_','0'].indexOf(ev.key)>-1)ev.preventDefault()});
 setLogos();
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&calOpen){calOpen=false;render()}});
 setApp();
+setBrand();
 render();
 </script>
 </body>
